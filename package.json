@@ -1,0 +1,35 @@
+{
+  "name": "chatpot-serverv2-monolithic",
+  "version": "1.0.0",
+  "description": "chatpot-v2 monolithic server application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && npm run lint && npm run build:compile-ts",
+    "build:compile-ts": "tsc -p ./tsconfig-for-build.json",
+    "lint": "eslint src/**/* --quiet",
+    "clean": "rimraf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JayJayDee/Chatpot-ServerV2-Monolithic.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JayJayDee/Chatpot-ServerV2-Monolithic/issues"
+  },
+  "homepage": "https://github.com/JayJayDee/Chatpot-ServerV2-Monolithic#readme",
+  "devDependencies": {
+    "@types/node": "^16.11.11",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "eslint": "^8.3.0",
+    "eslint-plugin-jest": "^25.3.0",
+    "jest": "^27.4.3",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.4.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.2"
+  }
+}

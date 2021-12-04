@@ -1,7 +1,8 @@
-import { Inject } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { IConfigReader } from './config-reader.interface';
 import { ConfigurationSymbols } from './configuration.symbols';
 
+@Injectable()
 export class MysqlConfigSet {
 	private _configReader: IConfigReader;
 

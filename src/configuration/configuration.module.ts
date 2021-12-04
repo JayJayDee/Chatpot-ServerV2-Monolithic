@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { StageConfigSet } from '.';
+import { SecretConfigSet, StageConfigSet } from '.';
 
 import { ConfigReaderEnv } from './config-reader-env';
 import { HttpConfigSet } from './config-set-http';
@@ -11,12 +11,14 @@ import { ConfigurationSymbols } from './configuration.symbols';
 		{ provide: ConfigurationSymbols.IConfigReader, useClass: ConfigReaderEnv },
 		HttpConfigSet,
 		MysqlConfigSet,
-		StageConfigSet
+		StageConfigSet,
+		SecretConfigSet
 	],
 	exports: [
 		HttpConfigSet,
 		MysqlConfigSet,
-		StageConfigSet
+		StageConfigSet,
+		SecretConfigSet
 	]
 })
 export class ConfigurationModule {}

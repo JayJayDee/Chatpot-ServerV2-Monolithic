@@ -8,19 +8,19 @@ export class ConfigReaderEnv implements IConfigReader {
 		this._source = process.env;
 	}
 
-	async readMandatoryItem(key: string): Promise<string> {
+	readMandatoryItem(key: string): string {
 		const rawValue = this._source[key];
 		if (!rawValue) {
 			throw new Error(`environment variable required: ${key}`);
 		}
-		return await Promise.resolve(rawValue);
+		return rawValue;
 	}
 
-	async readOptionalItem(key: string, defaultValue: string): Promise<string> {
+	readOptionalItem(key: string, defaultValue: string): string {
 		const value = this._source[key] ? this._source[key] : defaultValue;
 		if (!value) {
 			throw new Error(`environment variable required: ${key}`);
 		}
-		return await Promise.resolve(value);
+		return value;
 	}
 }
